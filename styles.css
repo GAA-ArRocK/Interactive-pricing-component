@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+:root {
+    /* ## Colors */
+
+    /* ### Primary */
+
+    --Soft-Cyan: hsl(174, 77%, 80%); /*(Full Slider Bar)*/
+    --Strong-Cyan: hsl(174, 86%, 45%); /*(Slider Backround)*/
+    --Light-Grayish-Red: hsl(14, 92%, 95%); /*(Discount Background)*/
+    --Light-Red: hsl(15, 100%, 70%); /*(Discount Text)*/
+    --Pale-Blue: hsl(226, 100%, 87%); /*(CTA Text)*/
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%); /*(Pricing Component Background)*/
+    --Very-Pale-Blue: hsl(230, 100%, 99%); /*(Main Background)*/
+    --Light-Grayish-Blue: hsl(224, 65%, 95%); /*(Empty Slider Bar)*/
+    --Light-Grayish-Blue: hsl(223, 50%, 87%); /*(Toggle Background)*/
+    --Grayish-Blue: hsl(225, 20%, 60%); /*(Text)*/
+    --Dark-Desaturated-Blue: hsl(227, 35%, 25%); /*(Text & CTA Background)*/
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Very-Pale-Blue);
+    background-image: url('./images/bg-pattern.svg');
+    background-repeat: no-repeat;
+}
+
+.title {
+    text-align: center;
+    padding: 5rem 1.5rem 5rem 1.5rem;
+    background-image: url('./images/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title h1 {
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+    color: var(--Dark-Desaturated-Blue);
+}
+
+.title h2 {
+    font-size: 12px;
+    margin: 0 5rem;
+    color: var(--Grayish-Blue);
+}
+
+.mainBlock {
+    background-color: var(--White);
+    text-align: center;
+    margin: 1rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 635px;
+}
+
+.pricingPart {
+    padding: 0rem 1rem;
+    border-bottom: 3px solid var(--Very-Pale-Blue);
+}
+
+.pageViews {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.slider {
+    appearance: none;
+    background-color: var(--Soft-Cyan);
+    opacity: 0.5;
+    width: 100%;
+    height: 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 3rem;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+    background-color: var(--Strong-Cyan);
+    cursor: pointer;
+    background-image: url('./images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mainBlock article {
+    color: var(--Grayish-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.price {
+    font-size: 30px;
+    margin-right: 0.5rem;
+    color: var(--Dark-Desaturated-Blue);
+    font-weight: 800;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 25px;
+    margin: 0 1rem;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .sliderRound {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .sliderRound:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .sliderRound {
+    background-color: var(--Strong-Cyan);
+  }
+   
+  input:checked + .sliderRound:before {
+    transform: translateX(29px);
+  }
+
+  .sliderRound {
+    border-radius: 34px;
+  }
+  
+  .sliderRound:before {
+    border-radius: 50%;
+  }
+
+.billingPart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.discount {
+    color: var(--Light-Red);
+    background-color: var(--Light-Grayish-Red);
+    padding: 2px 8px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.discWord {
+    display: none;
+}
+
+.featuresPart ul {
+    list-style-position: inside;
+    color: var(--Grayish-Blue);
+    font-size: 14px;
+    list-style-image: url('./images/icon-check.svg');
+    margin: 1.5rem 0;
+}
+
+.trialStartButton {
+    font-family: inherit;
+    color: var(--Pale-Blue);
+    background-color: var(--Dark-Desaturated-Blue);
+    padding: 0.8rem 3rem;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trialStartButton:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    color: var(--White);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 645px) {
+    .mainBlock {
+        margin: 1rem auto;
+    }
+
+    .pricingPart {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "pv pr"
+                             "sl sl"
+                             "bt bt";
+        padding: 2rem 3rem;
+        row-gap: 1rem;
+    }
+
+    .pageViews {
+        grid-area: pv;
+        align-self: center;
+        justify-self: start;
+        margin: 0;
+        padding: 0;
+    }
+
+    .priceWhole {
+        grid-area: pr;
+        margin: 0;
+        padding: 0;
+        align-self: center;
+        justify-self: end;
+    }
+
+    #priceSlider {
+        grid-area: sl;
+        align-self: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .billingPart {
+        grid-area: bt;
+        margin: 0;
+    }
+
+    .featuresPart {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "lt trial";
+        padding: 2rem 3rem;
+    }
+
+    .featuresPart ul {
+        grid-area: lt;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .trialStartButton {
+        grid-area: trial;
+        margin: 0;
+        height: 3.2rem;
+        width: 12rem;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .discWord {
+        display: inline;
+    }
+
+}
